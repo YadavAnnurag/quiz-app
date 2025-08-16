@@ -127,13 +127,13 @@ const progresspercentage = ((index + 1) / quizData.length) * 100;
 progressBar.style.width = `${progresspercentage}%`;
 
 
-// Reset button states before showing new question
+
 answerButtons.forEach(button => {
     button.disabled = false;                    
     button.style.backgroundColor = "";          
     button.style.color = "";                    
     button.classList.remove("correct", "wrong"); 
-    button.blur(); // remove focus highlight
+    button.blur(); 
 });
 
 startTimer();
