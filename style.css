@@ -1,0 +1,139 @@
+#quiz-screen,
+#result-screen{
+  display: none
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+#home-screen, #quiz-screen, #result-screen {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 500px; 
+    text-align: center;
+    display: none; 
+}
+
+#home-screen {
+    display: block;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #9fa3a8;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+
+#questionarea {
+    width: 90%;
+    min-height: 80px; 
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    background-color: #f7f7f7;
+    color: #333;
+    margin-bottom: 20px;
+    
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center; 
+}
+
+
+
+#answer-button {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+#timer, #quiz-count {
+    margin-top: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+
+}
+
+
+#progress-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto 0;
+    height: 12px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    transition: width 0.5s ease; 
+}
+
+
+#result {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+#play-again {
+  margin-bottom: 20px;
+}
+
+
+#creator-msg {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#answer-button button.correct {
+    background-color: #4caf50 !important;
+    color: white !important;
+}
+
+#answer-button button.wrong {
+    background-color: #f44336 !important;
+    color: white !important;
+}
+
+
+
+
+
+
+
+
