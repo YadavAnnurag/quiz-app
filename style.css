@@ -43,12 +43,26 @@ button {
     font-size: 1rem;
     margin-top: 10px;
     transition: background-color 0.2s, transform 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
-button:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
+@media (hover: hover)and (pointer: fine) {
+    button:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+    }
+    
 }
+
+@media (hover: none)and (pointer: coarse) {
+    button:active {
+        transform: scale(0.98);
+    }
+    
+}
+
+
 
 
 #questionarea {
@@ -79,6 +93,7 @@ button:hover {
     margin-top: 15px;
     font-weight: bold;
     margin-bottom: 15px;
+    
 
 }
 
@@ -120,16 +135,22 @@ button:hover {
     text-align: center;
 }
 
-#answer-button button.correct {
-    background-color: #4caf50 !important;
-    color: white !important;
+#answer-button button.correct,
+#answer-button button.correct:hover,
+#answer-button button.correct:active {
+    background-color: #4caf50;
+    color: white;
+    transform: none;
 }
 
-#answer-button button.wrong {
-    background-color: #f44336 !important;
-    color: white !important;
+#answer-button button.wrong,
+#answer-button button.wrong:hover,
+#answer-button button.wrong:active {
+    background-color: #f44336;
+    color: white;
+    transform: none;
 }
-
+  
 
 
 

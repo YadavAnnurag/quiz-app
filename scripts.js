@@ -83,6 +83,9 @@ const quizData = [
 let currentQuestionIndex = 0;
 let timer;
 let timeLimit = 10;
+
+
+
 function startTimer(){
   let timeLeft = timeLimit;
   document.getElementById("timer").textContent = `Time left :${timeLeft}`;
@@ -105,6 +108,7 @@ function startTimer(){
 function startQuiz() {
   document.getElementById("progress-container").style.display = "block";
   document.getElementById("progress-bar").style.width = "0%";
+  score = 0;
   currentQuestionIndex = 0;
   loadQuestion(currentQuestionIndex);
 }
@@ -119,22 +123,19 @@ document.getElementById("btn2").textContent = currentQuestion.options[1];
 document.getElementById("btn3").textContent = currentQuestion.options[2];
 document.getElementById("btn4").textContent = currentQuestion.options[3];
 
+answerButtons.forEach(button => {
+  button.disabled = false;
+  button.classList.remove("correct", "wrong");
+  button.style.backgroundColor = "";
+  button.style.color = "";
+});
+
 const quizCount = document.getElementById("quiz-count");
 if (quizCount) quizCount.textContent = `Question ${index + 1} of ${quizData.length}`;
 
 const progressBar = document.getElementById("progress-bar");
 const progresspercentage = ((index + 1) / quizData.length) * 100;
 progressBar.style.width = `${progresspercentage}%`;
-
-
-
-answerButtons.forEach(button => {
-    button.disabled = false;                    
-    button.style.backgroundColor = "";          
-    button.style.color = "";                    
-    button.classList.remove("correct", "wrong"); 
-    button.blur(); 
-});
 
 startTimer();
 }
@@ -144,6 +145,7 @@ const startButton = document.getElementById("start-btn");
 const quizScreen = document.getElementById("quiz-screen");
 
 const homeScreen = document.getElementById("home-screen");
+
 startButton.addEventListener("click",function(){
   homeScreen.style.display = "none";
   quizScreen.style.display ="block";
@@ -164,11 +166,9 @@ answerButtons.forEach(button => {
 
     answerButtons.forEach(btn => {
       if (btn.textContent === correctAnswer) {
-        btn.style.backgroundColor = "green";
-        btn.style.color = "white";
+        btn.classList.add("correct");
       } else if (btn.textContent === selectedAnswer) {
-        btn.style.backgroundColor = "red";
-        btn.style.color = "white";
+        btn.classList.add("wrong");
       }
     });
 
